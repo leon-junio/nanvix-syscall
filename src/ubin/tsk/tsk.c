@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main(){
-    printf("Leon \n");
+    printf("TSK command \n");
     return 0;
 }
