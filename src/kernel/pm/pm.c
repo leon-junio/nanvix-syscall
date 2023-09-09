@@ -133,6 +133,12 @@ PUBLIC void pm_init(void)
  * @param process_buf Process buffer
  */
 PUBLIC int do_get_process_info(pid_t pid, struct process_buf *buf){
-	#TODO chamar função do sistema
+	// TODO chamar função do sistema
+	if(pid){
+		return -1;
+	}
+	if(buf->pid != pid){
+		return -1;
+	}
 	return -1;
 }

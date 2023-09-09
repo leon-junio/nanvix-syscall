@@ -13,10 +13,10 @@
  * @param process_buf Process buffer
  */
 PUBLIC int sys_get_process_info(pid_t pid, struct process_buf *buf){
-    if(pid < 1){
+    if(pid){
         return -1;
     }
-    if(buf != 1){
+    if(buf->pid != pid){
         return -1;
     }
     return do_get_process_info(pid, buf);
