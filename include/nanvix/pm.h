@@ -121,7 +121,7 @@
 	/**@}*/
 
 #ifndef _ASM_FILE_
-
+	
 	/**
 	 * @brief Process.
 	 */
@@ -207,11 +207,25 @@
 		/**@}*/
 	};
 
+	/**
+	 * @brief Process Buff.
+	 */
+	struct process_buf
+	{
+		pid_t pid;              /**< Process ID.              */
+		unsigned utime;  /**< User CPU time.                          */
+    	unsigned ktime;  /**< Kernel CPU time.                        */
+		unsigned state;          /**< Current state.          */
+    	int priority;            /**< Process priorities.     */
+	};
+
 	/* Forward definitions. */
 	EXTERN void bury(struct process *);
 	EXTERN void die(int);
 	EXTERN int issig(void);
 	EXTERN void pm_init(void);
+	EXTERN int do_get_process_info(pid_t pid, struct process_buf *buf);
+	EXTERN int sys_get_process_info(pid_t pid, struct process_buf *buf);
 	EXTERN void sched(struct process *);
 
 #ifdef __NANVIX_KERNEL__

@@ -125,3 +125,14 @@ PUBLIC void pm_init(void)
 
 	enable_interrupts();
 }
+
+/**
+ * @brief Call the get process info system function
+ * 
+ * @param pid Process id
+ * @param process_buf Process buffer
+ */
+PUBLIC int do_get_process_info(pid_t pid, struct process_buf *buf){
+	#TODO chamar função do sistema
+	return -1;
+}
