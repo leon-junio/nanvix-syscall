@@ -44,6 +44,7 @@
 .PHONY: nim
 .PHONY: sleep
 .PHONY: tsk
+.PHONY: getprc
 
 # Builds everything.
 all: cat chgrp chmod chown cp echo kill ln login ls mv nice pwd rm stat sync \
@@ -149,6 +150,10 @@ nim:
 sleep: 
 	$(CC) $(CFLAGS) $(LDFLAGS) -D TESTE sleep/*.c -o $(UBINDIR)/sleep $(LIBDIR)/libc.a
 
+# Get process.
+sleep: 
+	$(CC) $(CFLAGS) $(LDFLAGS) getprc/*.c -o $(UBINDIR)/getprc $(LIBDIR)/libc.a
+
 
 # Clean compilation files.
 clean:
@@ -177,3 +182,4 @@ clean:
 	@rm -f $(UBINDIR)/nim
 	@rm -f $(UBINDIR)/sleep
 	@rm -f $(UBINDIR)/tsk
+	@rm -f $(UBINDIR)/getprc

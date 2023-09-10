@@ -132,13 +132,30 @@ PUBLIC void pm_init(void)
  * @param pid Process id
  * @param process_buf Process buffer
  */
-PUBLIC int do_get_process_info(pid_t pid, struct process_buf *buf){
-	// TODO chamar função do sistema
-	if(pid){
-		return -1;
-	}
-	if(buf->pid != pid){
-		return -1;
-	}
-	return -1;
+PUBLIC void do_get_process_info(pid_t pid, struct process_buf* buf)
+{
+
+    struct process *target_proc = NULL;
+    for (unsigned int i = 0; i < nprocs; i++)
+    {
+        if (proctab[i].pid == pid)
+        {
+            target_proc = &proctab[i];
+            break;
+        }
+    }
+
+    /* Step 2: If the process was found, fill the buffer. */
+    if (target_proc != NULL) 
+    {
+        buf->pid = target_proc->pid;
+        buf->status = target_proc->status;
+        buf->priority = target_proc->priority;
+        buf->utime = target_proc->utime;
+        buf->ktime = target_proc->ktime;
+    }
+    else
+    {
+        buf->pid = -1; // Indicates process not found.
+    }
 }
