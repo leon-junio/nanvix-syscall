@@ -2,11 +2,19 @@
 #include <nanvix/syscall.h>
 #include <sys/process.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 
-int main(void)
+int main(int argc, char **argv)
 {
-    pid_t pid = 1;
+    if (argc != 2)
+        exit(EXIT_FAILURE);
+    
+    pid_t pid = atoi(argv[1]);
+
+     if (pid > 0)
+        exit(EXIT_FAILURE);
+
     struct process_buf buf; 
 
 
