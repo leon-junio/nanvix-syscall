@@ -25,7 +25,7 @@
 
 int get_process_info(pid_t pid, struct process_buf* buf)
 {
-    int status;
+    int status = 0;
 
     __asm__ volatile (
         "int $0x80"
@@ -39,8 +39,8 @@ int get_process_info(pid_t pid, struct process_buf* buf)
     if (status < 0)
     {
         errno = -status;
-        return -1;
+        return (-1);
     }
 
-    return 0;
+    return (status);
 }
