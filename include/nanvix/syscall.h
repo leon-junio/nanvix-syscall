@@ -269,7 +269,7 @@
 	/*
 	 * Get process inf
 	 */
-	EXTERN void sys_get_process_info(pid_t pid, struct process_buf* buf);
+	EXTERN int sys_get_process_info(pid_t pid, struct process_buf* buf);
 #endif /* _ASM_FILE_ */
 
 #endif /* NANVIX_SYSCALL_H_ */

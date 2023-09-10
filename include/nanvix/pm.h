@@ -212,11 +212,11 @@
 	 */
 	struct process_buf
 	{
-		pid_t pid;              /**< Process ID.             */
-		unsigned utime;         /**< User CPU time.          */
-    	unsigned ktime;         /**< Kernel CPU time.        */
-		unsigned status;         /**< Current state.          */
-    	int priority;           /**< Process priorities.     */
+		pid_t pid;              /**< Process ID.              */
+		unsigned utime;  /**< User CPU time.                          */
+    	unsigned ktime;  /**< Kernel CPU time.                        */
+		unsigned status;          /**< Current state.          */
+    	int priority;            /**< Process priorities.     */
 	};
 
 	/* Forward definitions. */
@@ -224,7 +224,7 @@
 	EXTERN void die(int);
 	EXTERN int issig(void);
 	EXTERN void pm_init(void);
-	EXTERN void do_get_process_info(pid_t pid, struct process_buf* buf);
+	EXTERN void do_get_process_info(pid_t pid, struct process_buf *buf);
 	EXTERN void sched(struct process *);
 
 #ifdef __NANVIX_KERNEL__
