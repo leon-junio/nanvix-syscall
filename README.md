@@ -5,7 +5,8 @@
 > The command created to perform the pratical  assigment is TSK (TASK) inside nanvix terminal
 
 ```bash
-getprc # GETPRC Command will perform the syscall and run the program
+# Just run GETPRC ID (process id) inside nanvix after build the OS
+getprc 1 # GETPRC Command will perform the syscall and run the program
 ```
 
 [![Join us on Slack!](https://img.shields.io/badge/chat-on%20Slack-e01563.svg)](https://join.slack.com/t/nanvix/shared_invite/zt-1yu30bs28-nsNmw8IwCyh6MBBV~B~X7w)
