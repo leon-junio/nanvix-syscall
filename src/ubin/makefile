@@ -48,11 +48,7 @@
 
 # Builds everything.
 all: cat chgrp chmod chown cp echo kill ln login ls mv nice pwd rm stat sync \
-	 touch tsh ps clear nim sleep tsk
-
-# Builds tsk.
-tsk: 
-	$(CC) $(CFLAGS) $(LDFLAGS) tsk/*.c -o $(UBINDIR)/tsk $(LIBDIR)/libc.a
+	 touch tsh ps clear nim sleep getprc
 
 # Builds cat.
 cat: 
@@ -151,7 +147,7 @@ sleep:
 	$(CC) $(CFLAGS) $(LDFLAGS) -D TESTE sleep/*.c -o $(UBINDIR)/sleep $(LIBDIR)/libc.a
 
 # Get process.
-sleep: 
+getprc: 
 	$(CC) $(CFLAGS) $(LDFLAGS) getprc/*.c -o $(UBINDIR)/getprc $(LIBDIR)/libc.a
 
 
@@ -181,5 +177,4 @@ clean:
 	@rm -f $(UBINDIR)/clear
 	@rm -f $(UBINDIR)/nim
 	@rm -f $(UBINDIR)/sleep
-	@rm -f $(UBINDIR)/tsk
 	@rm -f $(UBINDIR)/getprc

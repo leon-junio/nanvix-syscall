@@ -4,15 +4,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-int main(int argc, char **argv)
+/*
+ * Collect info about some process
+ */
+int main(int argc, char *const argv[])
 {
     if (argc != 2)
         exit(EXIT_FAILURE);
     
     pid_t pid = atoi(argv[1]);
 
-     if (pid > 0)
+     if (pid < 0)
         exit(EXIT_FAILURE);
 
     struct process_buf buf; 

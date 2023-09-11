@@ -23,6 +23,14 @@
 #include <errno.h>
 #include <stdio.h>
 
+/*
+*
+* @brief Collect info about some process
+*
+* @param pid Process ID
+* @param buf Buffer to store process info
+*
+**/
 int get_process_info(pid_t pid, struct process_buf* buf)
 {
     int status = 0;
