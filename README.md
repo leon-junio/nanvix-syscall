@@ -2,7 +2,7 @@
 
 ## How to run?
 
-> The command created to perform the pratical  assigment is TSK (TASK) inside nanvix terminal
+> The command created to perform the pratical  assigment is GETPRC (GET PROCESS)
 
 ```bash
 # Just run GETPRC ID (process id) inside nanvix after build the OS
